@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import HomeContainer from './Containers/HomeContainer';
-import AboutContainer from './Containers/AboutContainer';
-import MenusContainer from './Containers/MenusContainer';
+import Navbar from './Navbar';
+import Home from './Home';
+import Menu from './Menu';
+import Gotem from './Gotem';
 
 class App extends Component {
     render() {
@@ -12,10 +12,9 @@ class App extends Component {
             <div className="App">
                 <Navbar />
                 <Switch>
-                    <Route exact path='/' render={(routerProps) => <HomeContainer {...routerProps} />} />
-                    <Route path='/contact' render={() => <ContactContainer />} />
-                    <Route path='/menu' render={() => <MenusContainer />} />
-                    <Route path='/about' render={() => <AboutContainer />} />
+                    <Route exact path='/' render={(routerProps) => <Home {...routerProps} />} />
+                    <Route path='/gotem' render={() => <Gotem />} />
+                    <Route path='/menu' render={() => <Menu />} />
                 </Switch>
                 <footer>copyright © {new Date().toISOString().substring(0, 4)} strikethrough. all rights reserved.</footer>
             </div>
